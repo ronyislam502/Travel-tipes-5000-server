@@ -55,7 +55,6 @@ const deleteComment = catchAsync(async (req, res) => {
 export const CommentControllers = {
   createComment,
   getAllComments,
-  getAComment,
   updateComment,
   deleteComment,
 }

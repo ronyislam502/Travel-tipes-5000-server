@@ -76,9 +76,10 @@ const getAllCommentsByPostFromDB = async (id: string) => {
 }
 const deletePostCommentFromDB = async (id: string, user: string) => {
   const session = await mongoose.startSession()
-  session.startTransaction()
 
   try {
+    session.startTransaction()
+
     const isCommentAvailable = await Comment.findById(id)
     if (!isCommentAvailable) {
       throw new Error('Comment not found')
